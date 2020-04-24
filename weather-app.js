@@ -34,6 +34,8 @@ window.addEventListener("load", function () {
           tmpDescMain.textContent = weather[0].main.toUpperCase();
           convertUnits(main.temp);
           tmpIcon.src = `//openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+        } else {
+          console.log("No Data Received");
         }
       })
       .catch((err) => {
@@ -57,8 +59,8 @@ window.addEventListener("load", function () {
   /** Caching with Service Worker API Start */
   //STEP 1 REGISTER
   // Checck the SW support
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw_cache_site.js");
-  }
+  // if ("serviceWorker" in navigator) {
+  //   navigator.serviceWorker.register("sw_cache_site.js");
+  // }
   /** Caching with Service Worker API End */
 });
