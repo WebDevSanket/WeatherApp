@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
           tmpDegree.textContent = main.temp;
           tmpDescMain.textContent = weather[0].main.toUpperCase();
           convertUnits(main.temp);
-          tmpIcon.src = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+          tmpIcon.src = `//openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
         }
       })
       .catch((err) => {
