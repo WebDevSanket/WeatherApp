@@ -15,7 +15,7 @@ body {
   user-select: none;
 }
 .location,
-.tmp {
+.tmp, .wind {
   height: 30vh;
   width: 50%;
   display: flex;
@@ -37,13 +37,26 @@ body {
 .degree-section h2 {
   font-size: 40px;
 }
-/* .tmp-desc-1 {
-  font-weight: 700;
-}
-.tmp-desc-2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+#tmp-ul{
+  list-style-position: inside;
   font-size: 14px;
-  margin-top: 0;
-} */
+  margin: 15px;
+  line-height: 25px;
+}
+#tmp-ul li {
+  border-bottom: 1px solid;
+}
+details{  
+  cursor: pointer;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  width: 320px;
+}
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
