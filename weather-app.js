@@ -14,12 +14,14 @@ window.addEventListener("load", function () {
   let sunRise = document.getElementById("sun-rise");
   let sunSet = document.getElementById("sun-set");
   let humidity = document.getElementById("humidity");
-  let rain = document.getElementById("rain");
+  let loadingDiv = document.getElementById("loadingDiv");
+  let dataSection = document.getElementById("dataSection");
 
+  dataSection.style.display = "none";
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      long = position.coords.longitude;
-      lat = position.coords.latitude;
+      long = parseFloat(position.coords.longitude.toFixed(2));
+      lat = parseFloat(position.coords.latitude.toFixed(2));
       getWeatherData(long, lat);
     });
   }
@@ -34,8 +36,9 @@ window.addEventListener("load", function () {
         return response.json();
       })
       .then((data) => {
+        loadingDiv.style.display = 'none';
+        dataSection.style.display = 'block';
         if (data) {
-          // console.log(data);
           const { main, name, sys, weather, wind } = data;
           timezone.textContent = name + ", " + sys.country;
           tmpDegree.textContent = main.temp;
@@ -54,6 +57,8 @@ window.addEventListener("load", function () {
         }
       })
       .catch((err) => {
+        loadingDiv.style.display = 'none';
+        dataSection.style.display = 'block';
         console.log("Error! ", err);
       });
   }
@@ -75,5 +80,5 @@ window.addEventListener("load", function () {
         }
       });
     }
-  }
+  }  
 });

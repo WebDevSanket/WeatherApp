@@ -7,28 +7,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="location" class="location">
-      <h1 id="timezone" class="location-timezone">--</h1>
-      <img id="icon" src="" alt="Icon" width="" />
+    <div id="loadingDiv" class="loadingDiv">
+      <h1>Loading...</h1>
     </div>
-    <div id="tmp" class="tmp">
-      <div id="degree-section" class="degree-section">
-        <h2 id="tmp-degree" class="tmp-degree">--</h2>
-        <span id="tmp-unit">F</span>
+  <section id="dataSection">
+      <div id="location" class="location">
+        <h1 id="timezone" class="location-timezone">--</h1>
+        <img id="icon" src="" alt="Icon" width="" />
       </div>
-    </div>
-    <details class="tmp-desc-1">
-      <summary id="tmp-desc-main">--</summary>
-      <ul id= "tmp-ul">
-        <li id="tmp-desc"></li>
-        <li id="tmp-min"></li>
-        <li id="tmp-max"></li>
-        <li id="humidity"></li>
-        <li id="wind-speed"></li>
-        <li id="sun-rise"></li>
-        <li id="sun-set"></li>
-      </ul>
-    </details> 
+      <div id="tmp" class="tmp">
+        <div id="degree-section" class="degree-section">
+          <h2 id="tmp-degree" class="tmp-degree">--</h2>
+          <span id="tmp-unit">F</span>
+        </div>
+      </div>
+      <details class="tmp-desc-1">
+        <summary id="tmp-desc-main">--</summary>
+        <ul id= "tmp-ul">
+          <li id="tmp-desc"></li>
+          <li id="tmp-min"></li>
+          <li id="tmp-max"></li>
+          <li id="humidity"></li>
+          <li id="wind-speed"></li>
+          <li id="sun-rise"></li>
+          <li id="sun-set"></li>
+        </ul>
+      </details> 
+  </section>
     <script src="./weather-app.js"></script>
     <script src="./skycons.js"></script>
   </body>
